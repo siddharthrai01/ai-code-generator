@@ -1,50 +1,45 @@
-# AI-Assisted Python Code Generation (Codex Web UI)
+# Data Health Engine
 
-This repository demonstrates how to use Codex Web UI to generate, refine, and structure
-production-ready Python code for common data engineering and automation tasks.
+A platform-agnostic data validation and observability engine designed to
+monitor and enforce data quality across heterogeneous data sources.
 
-All code is generated or iteratively improved using Codex prompts, with a focus on:
-- Code quality
-- Reusability
-- Readability
+The engine provides a rule-based validation framework that works uniformly
+across databases, APIs, files, and other structured data sources through a
+pluggable architecture.
 
-## What’s Inside
+---
 
-- Python scripts for data cleaning, transformation, and file format conversion
-- Prompt examples used in Codex Web UI
-- Example input/output files
-- Refactored versions of AI-generated code
+## ✨ Key Features
 
-## How Codex Is Used
+- Platform-independent data validation
+- Rule-based and config-driven design
+- Pluggable data source connectors
+- Standardized internal data model
+- Extensible validation rule framework
+- Structured, machine-readable reports
 
-Codex Web UI is used as an AI coding assistant to:
-- Generate initial Python implementations
-- Refactor code for performance and readability
-- Remove hardcoded values
-- Add docstrings and structure
+---
 
-All prompts used are documented in the `prompts/` directory.
+## 🧠 Design Philosophy
 
-## Example Codex Prompt
+- **Source-agnostic**: Validation rules do not depend on where data comes from  
+- **Config-driven**: Rules are defined declaratively, not hardcoded  
+- **Extensible**: New sources and rules can be added without modifying core logic  
+- **Separation of concerns**: Clear boundaries between ingestion, validation, and reporting  
 
-You are a senior Python developer.
+---
 
-Write clean, production-ready Python code to:
-- Read a CSV file
-- Remove duplicates based on a key
-- Handle missing values
-- Save the output as a Parquet file
+## 🏗️ High-Level Architecture
 
-Output only Python code.
-
-## Project Structure
-
-ai-data-assistant/
-├── src/
-├── prompts/
-├── examples/
-└── README.md
-
-## License
-
-This project is licensed under the MIT License.
+```text
+Data Source
+   ↓
+Source Connector
+   ↓
+Standardized DataBatch
+   ↓
+Validation Rule Engine
+   ↓
+Validation Results
+   ↓
+Reporting Layer
